@@ -14,6 +14,10 @@
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="playground.Circle"/>
 <fullyQualifiedTypeName name="playground.ColoredCircle"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="org.w3c.dom.css.Counter"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="java.rmi.RemoteException"/>
+<fullyQualifiedTypeName name="SortAndMergeImpl"/>
+<fullyQualifiedTypeName name="SortAndMergeInterface"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>
