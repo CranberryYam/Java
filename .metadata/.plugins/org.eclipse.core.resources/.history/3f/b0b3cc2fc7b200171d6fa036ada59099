@@ -1,0 +1,16 @@
+package playground;
+
+import java.awt.Color;
+
+public class Circle {
+	public double center_x, center_y; 
+	public double radius; 
+
+	public void draw() { 
+	   System.out.println("draw a circle");
+	} 
+
+	public void draw(Color color) { 
+	   System.out.println("draw a circle with a "+color.getRGB()+" color");
+	}
+}

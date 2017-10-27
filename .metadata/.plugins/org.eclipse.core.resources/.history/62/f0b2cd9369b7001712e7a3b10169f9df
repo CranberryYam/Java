@@ -1,0 +1,65 @@
+
+
+import java.io.IOException;
+import java.util.Enumeration;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/Main")
+public class Main extends HttpServlet {
+	
+	private static final long serialVersionUID = 1L;
+	private String personName;
+	private String personPassword;
+	private String register;
+	private String login;
+       
+    public Main() {
+        super();
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		  personName = request.getParameter("personName");
+		  personPassword = request.getParameter("personPassword");
+		  register = request.getParameter("register");
+		  login = request.getParameter("login");
+		  if(check(personName, personPassword)){
+				    if(login != null)
+					  processLogin(request, response);
+				    else
+				      processRegister(request, response);
+				  }
+
+	
+		String name = request.getParameter("personName"); 
+		String password = request.getParameter("personPassword");
+		System.out.println("(" + name + ", " + password + ")");
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+	
+	private boolean check(String name,String password) {
+		return false;
+	}
+	private void makeCookie(HttpServletResponse response) {
+		Cookie aCookie = new Cookie("name", personName); 
+		aCookie.setMaxAge(60*60*24*365);
+		response.addCookie(aCookie);
+		Cookie bCookie = new Cookie("password", personPassword); 
+		bCookie.setMaxAge(60*60*24*365);
+		response.addCookie(bCookie);
+	}
+	private void processRegister(HttpServletRequest request, HttpServletResponse response) {
+		
+	}
+	private void processLogin(HttpServletRequest request, HttpServletResponse response) {
+		
+	}
+}

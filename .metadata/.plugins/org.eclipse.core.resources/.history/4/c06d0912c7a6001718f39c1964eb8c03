@@ -1,0 +1,41 @@
+package chat_server;
+
+import java.io.*;
+import java.net.*;
+import java.util.ArrayList;
+
+public class Server {
+    static ServerSocket serverSocket;
+    static int portNumber = 16790; //For the pace server this is the number we must use.
+	
+	public static void main(String[] args) {
+	    serverSocket = null;
+	    
+	    try {
+	      serverSocket = new ServerSocket(portNumber); 
+	      acceptClients();
+	    }catch (IOException e) {
+	        System.out.println("Can't initial new serverSocket because" + e);
+	        System.exit(0);
+	    }
+	}
+	
+	public static void acceptClients() {
+		System.out.println("server begins at " + serverSocket.getLocalSocketAddress()+" port");
+		ArrayList<ClientThread> clients = new ArrayList<ClientThread>();
+		while(true) {
+			try {
+				Socket clientSocket = serverSocket.accept();
+				System.out.println("server accept"+clientSocket.getRemoteSocketAddress()+" client socket");
+				ClientThread client = new ClientThread(clientSocket);
+				Thread thread = new Thread(client);
+				thread.start();
+				clients.add(client);
+				
+			} catch (Exception e) {
+				System.out.println("server accept failed because " + e.getMessage());
+			}
+		}
+	}
+
+}

@@ -1,0 +1,18 @@
+package playground;
+
+public class ColoredCircle extends Circle {
+	public int color =126; 
+	
+	public static void main(String[] args) {
+        Circle c = new Circle();
+        ColoredCircle d = new ColoredCircle();
+        c = d;
+        c.draw();
+//        d = c;
+//        d.draw();
+	}
+
+	public void draw() { 
+		System.out.println("draw a colored circle with a "+color+" color");
+	}
+}

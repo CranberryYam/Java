@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;project1&apos; to &apos;Intro_to_Parallel/src&apos;&#x0A;- Original project: &apos;Intro_to_parrel&apos;&#x0A;- Destination element: &apos;Intro_to_Parallel/src&apos;&#x0A;- Original element: &apos;Intro_to_parrel/src/project1&apos;" description="Copy package" destination="=Intro_to_Parallel/src" element1="/src&lt;project1" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1505864594291" version="1.0"/>
+</session>

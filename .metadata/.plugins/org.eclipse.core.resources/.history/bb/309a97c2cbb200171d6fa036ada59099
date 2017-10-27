@@ -1,0 +1,73 @@
+package playground;
+
+/* this file is for recPow and mergeSort */
+
+public class TryRecursion {
+
+	public static void main(String[] args) {
+		System.out.println("2^0 = "+recPow(0));
+		System.out.println("2^-2 = "+recPow(-2));
+		System.out.println("2^10 = "+recPow(10));
+		
+		int[] a = { 2, 4, 9, 25, 34 };
+		int[] b = { 4, 8, 12, 23, 36 };
+		int L[] = new int [a.length/2];
+		System.arraycopy(a, 0, L, 0, L.length);
+		for (int i = 0; i < L.length; i++) {
+			System.out.println(b[i]);
+		}
+	}
+
+	public static Double recPow(int n) {
+		if (n == 0) {
+			return 1.0;
+		}else if(n > 0){
+			return 2*recPow(n-1);
+		}else {
+			return recPow(n+1)/2;
+		}
+	}
+	
+    public static int[] mergeSortedArray(int[] arr1, int[] arr2){
+       int i = 0, j = 0, k = 0;
+       int n1 = arr1.length;
+       int n2 = arr2.length;
+       int[] arr3 = new int[n1+n2];
+
+       while(i<n1 && j <n2){
+          if (arr1[i] < arr2[j])
+               arr3[k++] = arr1[i++];
+          else
+               arr3[k++] = arr2[j++];
+          }
+       while(i < n1)
+          arr3[k++] = arr1[i++];
+       while(j < n2)
+           arr3[k++] = arr2[j++];
+       return arr3;
+      }
+    
+    public static int[] sort(int[] a) {
+		if(a.length == 1) {
+			return a;
+		}
+	    int L[] = new int [a.length/2];
+	    int R[] = new int [a.length-L.length];
+	 
+	    System.arraycopy(a, 0, L, 0, L.length);
+        System.arraycopy(a, L.length,R, 0, R.length);
+        
+        
+        sort(L);
+        sort(R);
+        return mergeSortedArray(L, R);
+	}
+    
+    public static int[] mergeSort(int[] a, int[] b) {
+    	    int[] c = sort(a);
+    	    int[] d = sort(b);
+		return mergeSortedArray(c, d);
+	}
+
+
+}

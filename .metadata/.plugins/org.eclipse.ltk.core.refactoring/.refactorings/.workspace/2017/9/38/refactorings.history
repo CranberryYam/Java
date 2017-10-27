@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;Intro_to_parrel&apos;" deleteContents="true" description="Delete resource &apos;Intro_to_parrel&apos;" element1="/Intro_to_parrel" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1506124062996"/>
+</session>

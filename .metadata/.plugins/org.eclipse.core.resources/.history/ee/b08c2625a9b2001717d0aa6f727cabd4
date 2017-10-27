@@ -1,0 +1,7 @@
+package playground;
+
+public class TryBitcode2 {
+	public static int fact(int n) {
+		return n*fact(n-1);
+	}
+}

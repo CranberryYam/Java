@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+/Users/yihl/Desktop/Java/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+3127454789.index
+941005215.index
+2089459882.index
+2281165248.index
+3031261345.index
+1938439332.index
+3134033333.index

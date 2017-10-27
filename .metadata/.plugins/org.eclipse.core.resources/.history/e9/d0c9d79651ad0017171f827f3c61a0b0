@@ -1,0 +1,39 @@
+package playground;
+
+public class Person {
+	String firstName;
+	String lastName;
+	int age;
+
+	public static void main(String[] args) {
+		int a = 2;
+		int b = 3;
+        swap(a, b);
+        System.out.println("a = "+a);
+        System.out.println("b = "+b);
+	}
+	public static void swap(int a, int b) {
+		int temp = a;
+		a = b;
+		b = temp;
+	}
+	
+    public Person(String firstName, String lastName, int age) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+	}
+    public boolean equals(Object argo) {
+		if(argo instanceof Person) {
+			Person person2 = (Person)argo;
+			boolean a = person2.firstName.equals(this.firstName);
+			boolean b = person2.lastName.equals(this.lastName);
+			boolean c = (person2.age == this.age);
+		    if (a && b && c) {
+				return true;
+			}
+	    }
+		return false;
+	}
+
+}

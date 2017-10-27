@@ -1,0 +1,19 @@
+package playground;
+
+public class TryRecursion {
+
+	public static void main(String[] args) {
+		System.out.println("2^0 = "+recPow(0));
+		System.out.println("2^1 = "+recPow(1));
+		System.out.println("2^10 = "+recPow(10));
+	}
+
+	public static int recPow(int n) {
+		if (n == 0) {
+			return 1;
+		}else {
+			return 2*recPow(n-1);
+		}
+	}
+
+}
