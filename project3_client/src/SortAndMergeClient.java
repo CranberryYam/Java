@@ -1,9 +1,51 @@
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.util.Random;
 
 public class SortAndMergeClient {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		try {
+			SortAndMergeInterface si = (SortAndMergeInterface)Naming.lookup("rmi://localhost:16790/ABC");
+			System.out.println("Lookup completed " );
+			
+			Random r = new Random(System.currentTimeMillis());
+		    int n = r.nextInt(101) + 50;
+		    int[] a = new int[n];
+		    for(int i = 0; i < n; i++)
+		      a[i] = r.nextInt(100);
+		    System.out.println("Random Array1 = ");
+		    display(a);
+		    
+		    n = r.nextInt(101) + 50;
+		    int[] b = new int[n];
+		    for(int i = 0; i < n; i++)
+		      b[i] = r.nextInt(100);
+		    System.out.println("Random Array2 = ");
+		    display(b);
+		    
+		    a = si.sort(a);
+		    System.out.println("Sorted Array1 = ");
+		    display(a);
+		    b = si.sort(b);
+		    System.out.println("Sorted Array2 = ");
+		    display(b);
+		    int[] c = si.merge(a, b);
+		    System.out.println("Final Merged Array = ");
+		    display(c);
+		    
+		} catch (MalformedURLException | RemoteException | NotBoundException e) {
+			e.printStackTrace();
+			System.out.println("Lookup failed " );
+		}
 	}
+	
+	  private static void display(int[] x) {
+		    for(int i = 0; i < x.length; i++)
+		      System.out.print(x[i] + ", ");
+		      System.out.println("\n---------------------------------");
+		  }
 
 }
